@@ -1,0 +1,46 @@
+:root{
+    --nav-title-font-size: 5rem;
+    --nav-title-font-weight: bold;
+    --nav-link-font-size:1.5rem;
+    --nav-link-font-weight:bold;
+}
+
+.header-nav{
+    border: 5px solid white;
+    text-align: center;
+}
+.header-nav-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.header-nav-links li a{
+    background-color: white;
+    padding: 14px 25px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: #c75499;
+    font-size: var(--nav-link-font-size);
+    font-weight: var(--nav-link-font-weight);
+}
+.header-nav-links li{
+    list-style: none;
+
+}
+.header-nav-links li a:hover,.header-title:hover{
+    color: rgb(29, 11, 77);
+}
+.header-title{
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: var(--nav-title-font-size);
+    font-weight: var(--nav-title-font-weight);
+    
+    
+}
+#logo{
+    width: 6rem;
+    padding-left: 2.5rem;
+    margin-right: 1rem;
+}

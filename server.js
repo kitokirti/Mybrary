@@ -21,6 +21,8 @@ app.set('layout', './layouts/layout');
 app.use(expressLayouts);
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
+app.use('/public/images/', express.static('./public/images'));
+
 
 app.use(bodyParser.urlencoded({limit : '10mb', extended:false}));
 mongoose.connect(process.env.DATABASE_URL,{
