@@ -33,7 +33,6 @@ router.post('/', async (req, res) => {
     try {
         const newAuthor = await author.save();
         res.redirect(`authors/${newAuthor.id}`);
-        //res.redirect('authors')
     } catch{
         let locals = {
             author: author,
@@ -42,7 +41,7 @@ router.post('/', async (req, res) => {
         res.render('authors/new', locals);
     }
 })
-
+//Show Author
 router.get('/:id',async(req,res)=>{
     try{
         const author = await Author.findById(req.params.id);
@@ -55,6 +54,7 @@ router.get('/:id',async(req,res)=>{
         res.redirect('/');
     }
 })
+//Edit Author
 router.get('/:id/edit',async(req,res)=>{
     try{
         const author = await Author.findById(req.params.id);
@@ -63,6 +63,7 @@ router.get('/:id/edit',async(req,res)=>{
         res.redirect('/authors');
     }
 })
+//Update Author
 router.put('/:id',async(req,res)=>{
     let author;
     try {
@@ -70,7 +71,6 @@ router.put('/:id',async(req,res)=>{
         author.name = req.body.name;
         await author.save();
         res.redirect(`/authors/${author.id}`);
-        //res.redirect('authors')
     } catch{
         if(author == null){
             res.redirect('/')
@@ -83,13 +83,13 @@ router.put('/:id',async(req,res)=>{
         }
     }
 })
+//Delete Author
 router.delete('/:id',async(req,res)=>{
     let author;
     try {
         author = await Author.findById(req.params.id);
         await author.remove();
         res.redirect(`/authors`);
-        //res.redirect('authors')
     } catch{
         if(author == null){
             res.redirect('/')
